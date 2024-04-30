@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:ex04_wpf_bikeshop"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="SupportPage">
+      Title="SupportPage" Loaded="Page_Loaded">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -19,11 +19,35 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="0" Content="라이브 서포트" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <Label Grid.Row="0" Grid.Column="0" Content="라이브 서포트" FontSize="20" 
+               VerticalAlignment="Center" Background="Lavender" Grid.ColumnSpan="2" Margin="10,5"/>
+        
         <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="1" Margin="10">
             <Label Content="샘플"/>
         </ListBox>
 
+        <ListBox x:Name="LsbBikes" Grid.Row="1" Grid.Column="1" Margin="10" 
+                 Background="LavenderBlush" ItemsSource="{Binding}" 
+                 SelectionChanged="LsbBikes_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="Speed" />
+                        <TextBlock Text="{Binding Path=speed}" />
+                        <Slider Value="{Binding Path=speed}" Maximum="100" />
+                        <TextBlock Text="Color" />
+                        <Border Height="20">
+                            <Border.Background>
+                                <SolidColorBrush Color="{Binding Path=color}" />
+                            </Border.Background>
+                        </Border>
+                        
+                        <TextBox Text="{Binding Path=color}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>       
+        </ListBox>
+        
         <TextBox Grid.Row="2" Grid.Column="0" Margin="10" Text="메시지를 적으세요."/>
 
         <Button Content="전송" Grid.Row="2" Grid.Column="1" Margin="10"/>

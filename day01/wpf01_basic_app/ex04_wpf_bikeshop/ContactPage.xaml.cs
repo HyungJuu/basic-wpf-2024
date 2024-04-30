@@ -30,11 +30,16 @@ namespace ex04_wpf_bikeshop
             // 코드에서 속성에 값을 지정할 때 사용하는 방법
             Bike myBike = new Bike();
             myBike.speed = 60;
-            myBike.color = Colors.Black;
+            myBike.color = Colors.Red;
 
-            TextBox  text1 = new TextBox();
-            //MessageBox.Show(DgBike.speed.ToString());
-
+            TextBox text1 = new TextBox();
+            StpBike.DataContext = myBike;
         }
+
+       /* private void SldValue_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            PrgValue.Value = (double)e.NewValue;
+            LblValue.Content = Math.Round(PrgValue.Value;
+        }*/
     }
 }
