@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ex01_wpf_start", "ex01_wpf_start\ex01_wpf_start.csproj", "{56102BCC-4399-4E0B-AFC7-829F9968679F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ex01_wpf_start", "ex01_wpf_start\ex01_wpf_start.csproj", "{56102BCC-4399-4E0B-AFC7-829F9968679F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ex02_wpf_controls", "ex02_wpf_controls\ex02_wpf_controls.csproj", "{CE154AE5-24CF-4360-B796-23988610C302}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ex02_wpf_controls", "ex02_wpf_controls\ex02_wpf_controls.csproj", "{CE154AE5-24CF-4360-B796-23988610C302}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ex03_wpf_again", "ex03_wpf_again\ex03_wpf_again.csproj", "{25D2DC1C-0037-4FBE-815D-325A850DD156}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ex03_wpf_again", "ex03_wpf_again\ex03_wpf_again.csproj", "{25D2DC1C-0037-4FBE-815D-325A850DD156}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ex04_wpf_bikeshop", "ex04_wpf_bikeshop\ex04_wpf_bikeshop.csproj", "{2D46A99F-6F9E-4375-A9A3-DDBA9767916E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{25D2DC1C-0037-4FBE-815D-325A850DD156}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25D2DC1C-0037-4FBE-815D-325A850DD156}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{25D2DC1C-0037-4FBE-815D-325A850DD156}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D46A99F-6F9E-4375-A9A3-DDBA9767916E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D46A99F-6F9E-4375-A9A3-DDBA9767916E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D46A99F-6F9E-4375-A9A3-DDBA9767916E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D46A99F-6F9E-4375-A9A3-DDBA9767916E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,13 +6,44 @@
       xmlns:local="clr-namespace:ex04_wpf_bikeshop"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ContactPage">
+      Title="ContactPage" Loaded="Page_Loaded">
 
     <Grid>
-        <Label Content="받는사람" HorizontalAlignment="Left" Margin="11,22,0,0" VerticalAlignment="Top"/>
-        <Label Content="내용" HorizontalAlignment="Left" Margin="35,69,0,0" VerticalAlignment="Top"/>
-        <TextBox Margin="86, 24, 32, 0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="22" ToolTip="받는사람 주소"/>
-        <TextBox Margin="86, 69, 32, 19" TextWrapping="Wrap" Text="" ToolTip="내용입력"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
 
+        <Grid Grid.Row="0">
+            <Label Content="받는사람" HorizontalAlignment="Left" Margin="11,22,0,0" VerticalAlignment="Top"/>
+            <Label Content="내용" HorizontalAlignment="Left" Margin="35,69,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="TxtSender" Margin="87,24,31,0" TextWrapping="Wrap" Text="{Binding speed, ElementName=DgBike}" VerticalAlignment="Top" Height="22" ToolTip="받는사람 주소"/>
+            <TextBox x:Name="TxtContent" Margin="86, 69, 32, 19" TextWrapping="Wrap" Text="" ToolTip="내용입력"/>
+            <Label HorizontalAlignment="Left" Margin="0,-2,0,0" VerticalAlignment="Top" xmlns:bk="clr-namespace:ex04_wpf_bikeshop">
+                <bk:Bike x:Name="DgBike" speed="70" color="AliceBlue"/>
+            </Label>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <StackPanel Orientation="Horizontal">
+                <ListBox Width="200" Height="60" Margin="10">
+                    <Label Content="첫번째 요소" />
+                    <TextBlock Text="두번째 요소" />
+                    <GroupBox Header="세번째 요소">
+                        추가내용
+                    </GroupBox>
+                </ListBox>
+                
+                <ComboBox Width="200" Height="60" Margin="10">
+                    <Label Content="첫번째 요소" />
+                    <TextBlock Text="두번째 요소" />
+                    <GroupBox Header="세번째 요소">
+                        추가내용
+                    </GroupBox>
+                </ComboBox>
+                
+            </StackPanel>
+        </Grid>
+        
     </Grid>
 </Page>

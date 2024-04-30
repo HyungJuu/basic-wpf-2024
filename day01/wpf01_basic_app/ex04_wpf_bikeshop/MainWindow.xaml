@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ex04_wpf_bikeshop"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+        Title="LocalBikeShop" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid Margin="5">
         <!-- 디자인에서 페이지 설정시 Source="/ContactPage.xaml" -->
-        <Frame x:Name="MainFrame" NavigationUIVisibility="Visible" Source="" />
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Visible" />
     </Grid>
 </Window>
