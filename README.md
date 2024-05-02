@@ -42,3 +42,43 @@
         - 리소스 사전 : 공유할 디자인 내용이 많을 때 파일로 따로 지정
 
 - WPF MVVM
+    - MVC(Model View Controller 패턴)
+        - 웹개발(Spring, ASP.Net, MVC, dJango, etc...) 현재도 사용되고 있음
+        - Model : Data입출력 처리를 담당
+        - View : 디스플레이 화면 담당
+        - Controller : View를 제어, Model 처리 중앙에 관장
+
+    - MVVM(Model View ViewModel)
+        - Model : Data 입출력(DB side)
+        - View : 화면, 순수 xaml로만 구성
+        - ViewModel : 뷰에 대한 메서드, 액션, INotifyPropertyChanged를 구현 
+
+        ![MVVM패턴]()
+
+    - 권장 구현방법
+        - ViewModel 생성, 알림 속성 구현
+        - View에 ViewModel을 데이터바인딩
+        - Model DB작업을 독립적으로 구현
+
+    - MVVM 구현을 도와주는 프레임워크
+        0. ~~Mvvmlight.Toolkit~~ : 3rd Party 개발. 2009년부터 시작 ~ 2014년도 이후로 더이상 개발이나 지원이 없음
+        1. **Caliburn.Micro** : MVVM 구현이 아주 간단하고 강력함.중소형 프로젝트에 적합. But, 디버깅이 조금 어려움
+        2. AvaloniaUI : 3rd Party 개발. 크로스플랫폼. 디자인은 최고
+        3. Prism : Microsoft 개발. 매우 어려움. 대규모 프로젝트 활용
+
+- Caliburn.Micro
+    1. 프로젝트 생성 후 MainWindow.xaml 삭제
+    2. Models, Views, ViewModels 폴더(네임스페이스) 생성
+    3. 종속성 NuGet패키지 Caliburn.Micro 설치
+    4. 루트폴더에 Bootstrapper.cs 클래스 생성, 작성
+    5. App.xaml에서 StartupUri 삭제
+    6. App.xaml에 Bootstrapper 클래스를 리소스사전에 등록
+    7. App.xaml.cs에 App() 생성자 추가
+    8. ViewModels 폴더에 MainViewModel.cs 클래스 생성
+    9. Bootstrapper.cs에 OnStartup() 내용을 변경
+    10. Views 폴더에 MainViewModel 생성
+
+    - 작업 분리
+        - DB 개발자 : DBMS 테이블 생성, Models에 클래스 작업
+        - Xaml 디자이너 : Views 폴더에 있는 xaml 파일을 디자인작업
+        
