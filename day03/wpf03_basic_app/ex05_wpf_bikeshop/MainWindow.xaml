@@ -1,0 +1,111 @@
+﻿<Window x:Class="ex05_wpf_bikeshop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ex05_wpf_bikeshop"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Window.Resources>
+        <Button x:Key="custButton"> Hello, Button </Button>
+        <SolidColorBrush x:Key="accentBrush" Color="#004E35" />
+        <Style x:Key="ButtonAccentVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Grid>
+                            <Rectangle Fill="#539165"
+                                       Stroke="DarkGreen"
+                                       RadiusX="10" RadiusY="10" />
+                            <Label Content="Click" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0" Margin="0,0,0,274">
+            <GroupBox Header="Winforms 방식" Margin="0,0,0,24">
+                <StackPanel>
+                    <TextBox x:Name="TxtMyBikeSpeed" KeyDown="TxtMyBikeSpeed_KeyDown"/>
+                    <TextBox x:Name="TxtCopySpeed" />
+                </StackPanel>    
+            </GroupBox>
+            <GroupBox Header="디자인리소스" Margin="0,141,0,-269">
+                <StackPanel>
+                    <Label Content="{StaticResource custButton}" Background="{StaticResource accentBrush}" />
+
+                    <Button Style="{StaticResource CustomButton}" />
+                    <Button Style="{StaticResource ButtonAccentVisual}" />
+                </StackPanel>
+            </GroupBox>
+        </Grid>
+
+        <Grid Grid.Row="0" Grid.Column="1">
+            <GroupBox Header="WPF 방식" Margin="0,0,0,298">
+                <StackPanel x:Name="StsBike">
+                    <Label>
+                        <local:Bike Speed="60" Color="AliceBlue" />
+                    </Label>
+
+                    <StackPanel>
+                        <TextBox Text="{Binding Path=Speed}" />
+                        <TextBox Text="{Binding Color}" />
+                    </StackPanel>
+
+                    <TextBox Text="{Binding Path=Speed, Mode=TwoWay}" />
+                    <Border Height="20">
+                        <Border.Background>
+                            <SolidColorBrush Color="{Binding Color}" />
+                        </Border.Background>
+                    </Border>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="WPF 디자인" Margin="0,141,0,0">
+                <StackPanel>
+                    <Button Height="50" Content="클릭" />
+                    <Button Height="50" Content="클릭">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Ellipse Fill="DarkSeaGreen" />
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    
+                    <!--디자인-->
+                    <Button Height="70" Content="프레스!" Click="Button_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Grid>
+                                    <Ellipse Fill="{TemplateBinding Background}" Stroke="{TemplateBinding BorderBrush}" StrokeThickness="3" />
+                                    <Label Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Grid>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button Content="노멀버튼" Height="70">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Grid>
+                                    <Rectangle Fill="#528562" Stroke="{TemplateBinding BorderBrush}" RadiusX="50" RadiusY="50" />
+                                    <Label Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    
+                </StackPanel>
+            </GroupBox>
+            
+        </Grid>
+    </Grid>
+</Window>
