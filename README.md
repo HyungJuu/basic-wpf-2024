@@ -94,4 +94,19 @@
 
     - MVVM 특징
         - 예외발생 시 예외메시지의 표시 없이 프로그램 종료
-        - F5 디버깅
+        - ViewModel에서 디버깅 시작
+        - View.xaml 바인딩, 버튼클릭 등의 이름 지정 주의
+        - Model 내 DB테이블 컬럼 이름 일치, CRUD 쿼리문 오타 주의
+        - ViewModel 부분
+            - 변수, 속성으로 분리
+            - 속성이 Model 내의 속성과 이름이 일치
+            - List 사용불가 -> BindableCollection으로 변경
+            - 메서드와 이름이 동일한 Can... 프로퍼티 지정, 버튼 활성/비활성화
+            - 모든 속성에 NotifyOfPropertyChange() 메서드 존재!!(값 변경 알림)
+
+    ![실행화면](https://raw.githubusercontent.com/HyungJuu/basic-wpf-2024/main/images/wpf002.png)
+
+## 5일차
+- Caliburn.Micro + MahApps.Metro
+    - Metro(Modern UI) 디자인 접목            
+

@@ -22,18 +22,19 @@
                    Content="직원 리스트" FontSize="19" 
                    VerticalAlignment="Center" />
 
-            <DataGrid x:Name="Employees" Grid.Row="1" Grid.Column="0"
+            <DataGrid x:Name="ListEmployees" Grid.Row="1" Grid.Column="0"
+                      AutoGenerateColumns="False" IsReadOnly="True"
                       SelectedItem="{Binding SelectedEmployee}">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="아이디" Binding="{Binding Id}" />
-                    <DataGridTextColumn Header="사원명" Binding="{Binding EmpName}" />
-                    <DataGridTextColumn Header="급여" Binding="{Binding Salary}" />
-                    <DataGridTextColumn Header="부서명" Binding="{Binding DeptName}" />
-                    <DataGridTextColumn Header="주소" Binding="{Binding Addr}" />
+                    <DataGridTextColumn Header="아이디" Binding="{Binding Id}" Width="45" />
+                    <DataGridTextColumn Header="사원명" Binding="{Binding EmpName}" Width="80" />
+                    <DataGridTextColumn Header="급여" Binding="{Binding Salary}" Width="60" />
+                    <DataGridTextColumn Header="부서명" Binding="{Binding DeptName}" Width="80" />
+                    <DataGridTextColumn Header="주소" Binding="{Binding Addr}" Width="99" />
                 </DataGrid.Columns>
             </DataGrid>
 
-            <Button x:Name="GetMeployees" Grid.Row="2" Grid.Column="0"
+            <Button x:Name="GetEmployees" Grid.Row="2" Grid.Column="0"
                     Content="조회"
                     Width="140" Height="40" />
         </Grid>
@@ -72,7 +73,7 @@
                        VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10,0" />
 
                 <TextBox x:Name="Id" Grid.Row="0" Grid.Column="1"
-                         VerticalAlignment="Center" />
+                         VerticalAlignment="Center" IsReadOnly="True"/>
                 <TextBox x:Name="EmpName" Grid.Row="1" Grid.Column="1"
                          VerticalAlignment="Center" />
                 <TextBox x:Name="Salary" Grid.Row="2" Grid.Column="1"
