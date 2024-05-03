@@ -81,3 +81,17 @@
     - 작업 분리
         - DB 개발자 : DBMS 테이블 생성, Models에 클래스 작업
         - Xaml 디자이너 : Views 폴더에 있는 xaml 파일을 디자인작업
+
+## 4일차
+- Caliburn.Micro
+    - 작업 분리
+        - Xaml 디자이너 : xaml 파일만 디자인
+        - ViewModel 개발자 : Model에 있는 DB관련정보와 View를 연계하여 전체구현작업
+
+    - Calburn.Micro 특징
+        - Xaml 디자인 시 {Binding ...} &rarr; 잘 사용하지 않음
+        - 대신 x:Name을 사용
+
+    - MVVM 특징
+        - 예외발생 시 예외메시지의 표시 없이 프로그램 종료
+        - F5 디버깅
