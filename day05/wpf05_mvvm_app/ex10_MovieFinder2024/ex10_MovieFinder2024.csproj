@@ -10,6 +10,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="imgs\No_Picture.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="imgs\No_Picture.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="movie.ico" />
   </ItemGroup>
 
@@ -17,6 +24,7 @@
     <PackageReference Include="MahApps.Metro" Version="2.4.10" />
     <PackageReference Include="MahApps.Metro.IconPacks" Version="4.11.0" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
 </Project>
