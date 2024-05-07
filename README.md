@@ -82,7 +82,7 @@
         - DB 개발자 : DBMS 테이블 생성, Models에 클래스 작업
         - Xaml 디자이너 : Views 폴더에 있는 xaml 파일을 디자인작업
 
-## 4일차
+## 4일차 (24.05.03)
 - Caliburn.Micro
     - 작업 분리
         - Xaml 디자이너 : xaml 파일만 디자인
@@ -106,7 +106,30 @@
 
     ![실행화면](https://raw.githubusercontent.com/HyungJuu/basic-wpf-2024/main/images/wpf002.png)
 
-## 5일차
-- Caliburn.Micro + MahApps.Metro
-    - Metro(Modern UI) 디자인 접목            
+## 5일차 (24.05.07)
+- MahApps.Metro https://mahapps.com/
+    - Metro(Modern UI) 디자인 접목 http://materialdesigninxaml.net/         
 
+    ![실행화면](https://raw.githubusercontent.com/HyungJuu/basic-wpf-2024/main/images/wpf003.png)
+
+    ![저장화면](https://raw.githubusercontent.com/HyungJuu/basic-wpf-2024/main/images/wpf004.png)
+
+- Movie API 연동 앱, MovieFinder 2024
+    - DB(SQL Server) 연동
+    - MahApps.Metro
+    - OpenAPI 두가지 사용
+    - MVVM은 시간부족으로 사용안함
+
+    - 좋아하는 영화 즐겨찾기 앱
+    - [TMDB](https://www.themoviedb.org/) OpenAI 활용
+        - 회원가입 후 API 신청
+
+    - [Youtube API](https://console.cloud.google.com/) 활용
+        - 새 프로젝트 생성
+        - API 및 서비스, 라이브러리 선택
+        - Youtube Data API v3 선택, 사용버튼 클릭
+        - 사용자 인증정보 만들기 클릭
+            1. 사용자 데이터 라디오버튼 클릭
+            2. OAutho 동의화면, 기본내용 입력 후 다음
+            3. 범위는 저장 후 계속
+            4. OAutho Client ID, 앱유형 : 데스크톱앱, 이름 입력 후 만들기 클릭
