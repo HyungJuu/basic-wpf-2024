@@ -119,6 +119,7 @@ namespace ex10_MovieFinder2024
             if (e.Key == Key.Enter)
             {
                 BtnSearch_Click(sender, e); // 검색버튼 클릭 이벤트핸들러 실행
+                ImgPoster.Source = new BitmapImage(new Uri("imgs/No_Picture.png", UriKind.RelativeOrAbsolute));
             }
         }
 
@@ -189,7 +190,6 @@ namespace ex10_MovieFinder2024
                         insRes += cmd.ExecuteNonQuery(); // 데이터 하나마다 INSERT쿼리 실행
                     }
                 }
-
                 if (insRes == addMovieItems.Count)
                 {
                     await this.ShowMessageAsync("즐겨찾기", "즐겨찾기 저장성공!");
@@ -226,16 +226,29 @@ namespace ex10_MovieFinder2024
                         {
                             Id = Convert.ToInt32(row["Id"]),
                             Title = Convert.ToString(row["Title"]),
-                            Original_Title = Convert.ToString(row["Original_Title"])
-
+                            Original_Title = Convert.ToString(row["Original_Title"]),
+                            Release_Date = Convert.ToString(row["Release_Date"]),
+                            Original_Language = Convert.ToString(row["Original_Language"]),
+                            Adult = Convert.ToBoolean(row["Adult"]),
+                            Vote_Average = Convert.ToDouble(row["Vote_Average"]),
+                            Vote_Count = Convert.ToInt32(row["Vote_Count"]),
+                            Poster_Path = Convert.ToString(row["Poster_Path"]),
+                            Overview = Convert.ToString(row["Overview"]),
+                            Popularity = Convert.ToDouble(row["Popularity"]),
+                            Reg_Date = Convert.ToDateTime(row["Reg_Date"])
                         };
+                        favMovieItems.Add(movieItem);
                     }
+
+                    this.DataContext = favMovieItems;
+                    isFavorite = true; // 즐겨찾기 DB에서
+                    StsResult.Content = $"즐겨찾기 {favMovieItems.Count}건 조회완료";
+                    ImgPoster.Source = new BitmapImage(new Uri("imgs/No_Picture.png", UriKind.RelativeOrAbsolute));
                 }
             }
             catch (Exception ex)
             {
-
-                throw;
+                await this.ShowMessageAsync("오류", $"즐겨찾기 조회오류 {ex.Message}");
             }
         }
 

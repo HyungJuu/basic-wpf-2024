@@ -117,7 +117,9 @@
 - Movie API 연동 앱, MovieFinder 2024
     - 좋아하는 영화 즐겨찾기 앱
     - DB(SQL Server) 연동
-    - MahApps.Metro
+    - MahApps.Metro UI
+    - CefSharp WebBrowser 패키지
+    - Google.Apis 패키지
     - MVVM 사용안함
     - OpenAPI 두가지 사용
 
@@ -135,4 +137,14 @@
             4. OAutho Client ID, 앱유형 : 데스크톱앱, 이름 입력 후 만들기 클릭
 
 ## 6일차
-- MovieFinder 2024 계속
+- MovieFinder 2024 남은것
+    - 즐겨찾기 후 다시 선택 즐겨찾기 막기
+    - 즐겨찾기 삭제 구현
+    - 그리드뷰 영화를 더블클릭하면 영화소개 팝업
+
+## 7일차
+- 데이터포털 API 연동앱 예제
+    - 5/13(월) 개인프로젝트 참조소스
+
+## 8일차
+- WPF 개인프로젝트 포트폴리오 작업
