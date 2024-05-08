@@ -115,12 +115,12 @@
     ![저장화면](https://raw.githubusercontent.com/HyungJuu/basic-wpf-2024/main/images/wpf004.png)
 
 - Movie API 연동 앱, MovieFinder 2024
+    - 좋아하는 영화 즐겨찾기 앱
     - DB(SQL Server) 연동
     - MahApps.Metro
+    - MVVM 사용안함
     - OpenAPI 두가지 사용
-    - MVVM은 시간부족으로 사용안함
 
-    - 좋아하는 영화 즐겨찾기 앱
     - [TMDB](https://www.themoviedb.org/) OpenAI 활용
         - 회원가입 후 API 신청
 
@@ -133,3 +133,6 @@
             2. OAutho 동의화면, 기본내용 입력 후 다음
             3. 범위는 저장 후 계속
             4. OAutho Client ID, 앱유형 : 데스크톱앱, 이름 입력 후 만들기 클릭
+
+## 6일차
+- MovieFinder 2024 계속
