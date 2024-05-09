@@ -63,6 +63,7 @@
         <DataGrid x:Name="GrdResult" Grid.Row="1" Grid.Column="0" Margin="5"
                   IsReadOnly="True" AutoGenerateColumns="False" ItemsSource="{Binding}"
                   Style="{StaticResource MahApps.Styles.DataGrid.Azure}"
+                  MouseDoubleClick="GrdResult_MouseDoubleClick"
                   SelectedCellsChanged="GrdResult_SelectedCellsChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Title}" Header="한글제목" FontWeight="Bold" />
