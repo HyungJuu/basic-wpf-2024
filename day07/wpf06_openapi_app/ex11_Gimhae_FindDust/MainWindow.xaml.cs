@@ -166,9 +166,15 @@ namespace ex11_Gimhae_FindDust
 
         }
 
+        // 지도에 위치 표시
         private void GrrdResult_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
+            var curItem = GrdResult.SelectedItem as DustSensor;
 
+            var mapWindow = new MapWindow(curItem.Coordy, curItem.Coordx);
+            mapWindow.Owner = this;
+            mapWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            mapWindow.ShowDialog();
         }
     }
 }

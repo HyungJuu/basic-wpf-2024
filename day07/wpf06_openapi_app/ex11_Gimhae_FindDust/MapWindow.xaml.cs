@@ -26,7 +26,7 @@ namespace ex11_Gimhae_FindDust
 
         public MapWindow(double coordy, double coordx) : this()
         {
-
+            BrsLoc.Address = $"https://google.com/maps/place/{coordy},{coordx}";
         }
     }
 }
