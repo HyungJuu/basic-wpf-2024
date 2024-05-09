@@ -117,9 +117,10 @@
 - Movie API 연동 앱, MovieFinder 2024
     - 좋아하는 영화 즐겨찾기 앱
     - DB(SQL Server) 연동
-    - MahApps.Metro UI
+    - MahApps.Metro UI & IconPacks
     - CefSharp WebBrowser 패키지
     - Google.Apis 패키지
+    - Newtonsoft.Json 패키지
     - MVVM 사용안함
     - OpenAPI 두가지 사용
 
@@ -156,6 +157,9 @@
 https://github.com/HyungJuu/basic-wpf-2024/assets/158007420/a38646e9-8191-423f-9419-223fa0de1d7f
 
 - 데이터포털 API 연동앱 예제
+    - CefSharp 사용시 플랫폼 대상 AnCPU 에서 x64로 변경 필수!!
+    - MahApps.Metro UI, IconPacks
+    - Newtonsoft.Json 패키지
     - 5/13(월) 개인프로젝트 참조소스
 
 ## 8일차
