@@ -13,7 +13,7 @@
     <!-- 아이콘 -->
     <mah:MetroWindow.IconTemplate>
         <DataTemplate>
-            <iconPack:PackIconWeatherIcons Kind="Dust" Margin="10,7, 0, 0" Foreground="White" />
+            <iconPack:PackIconMaterial Kind="ImageFrame" Margin="10,7, 0, 0" Foreground="White" />
         </DataTemplate>
     </mah:MetroWindow.IconTemplate>
 
@@ -49,9 +49,13 @@
                           mah:TextBoxHelper.ClearTextButton="True" 
                           SelectionChanged="CboReqDate_SelectionChanged" />
 
-                <DatePicker x:Name="DateSelect" Width="150" Margin="5, 10, 10, 10"
-                            Style="{StaticResource MahApps.Styles.DatePicker}"
-                            SelectedDateChanged="DateSelect_SelectedDateChanged"/>
+                <TextBox x:Name="TxtYear" Width="150" Margin="5, 10, 10, 10" 
+                         Style="{StaticResource MahApps.Styles.TextBox.Search}"
+                         mah:TextBoxHelper.Watermark="검색년도 입력"
+                         mah:TextBoxHelper.UseFloatingWatermark="True"
+                         mah:TextBoxHelper.ClearTextButton="True" 
+                         DataContextChanged="TxtYear_DataContextChanged"
+                         />
 
             </StackPanel>
         </Grid>
@@ -59,8 +63,17 @@
         <!-- 중간 데이터그리드 영역 -->
         <DataGrid x:Name="GrdResult" Grid.Row="1" Margin="10"
                   IsReadOnly="True" ItemsSource="{Binding}"
+                  AutoGenerateColumns="False"
                   Style="{StaticResource MahApps.Styles.DataGrid.Azure}"
-                  MouseDoubleClick="GrrdResult_MouseDoubleClick" />
+                  MouseDoubleClick="GrrdResult_MouseDoubleClick">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="전시번호" Binding="{Binding res_no}" />
+                <DataGridTextColumn Header="제목" Binding="{Binding title}" />
+                <DataGridTextColumn Header="전시시작일" Binding="{Binding op_st_dt}" />
+                <DataGridTextColumn Header="전시종료일" Binding="{Binding op_ed_dt}" />
+                <DataGridTextColumn Header="장소" Binding="{Binding place_nm}" />
+            </DataGrid.Columns>
+        </DataGrid>
         
         <!-- 하단 상태바 위치 -->
         <StatusBar Grid.Row="2">

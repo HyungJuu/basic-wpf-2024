@@ -118,7 +118,7 @@ namespace ex03_BusanExhibition
         {
             if (GrdResult.Items.Count == 0)
             {
-                await this.ShowMessageAsync("경고", "실시간 조회 후 저장하세요.");
+                await this.ShowMessageAsync("경고", "조회 후 저장하세요.");
                 return;
             }
 
@@ -166,12 +166,6 @@ namespace ex03_BusanExhibition
             InitComboDateFromDB();
         }
 
-        private void CboReqDate_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-
-        }
-
 
         // 전시회 더블클릭으로 url 열기
         private void GrrdResult_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -192,8 +186,24 @@ namespace ex03_BusanExhibition
             }
         }
 
-        private void DateSelect_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+
+        private void CboReqDate_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
+        }
+
+        private void TxtYear_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            //var curItem = GrdResult.SelectedItem as Exhibition;
+
+            //string Op_st_dt = curItem.op_st_dt;
+            //string Years = Op_st_dt.Substring(0, 4);
+            //if (TxtYear == Years)
+            //{
+
+            //}
+            
+
 
         }
     }
