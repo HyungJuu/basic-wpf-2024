@@ -20,9 +20,10 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="60" />
             <RowDefinition Height="1*" />
-            
+            <RowDefinition Height="30" />
         </Grid.RowDefinitions>
 
+        <!-- 상단 타이틀 및 버튼 위치 -->
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
@@ -30,8 +31,9 @@
             </Grid.ColumnDefinitions>
 
             <Label Content="날씨 정보앱" FontSize="16" FontWeight="Bold" Margin="10" />
+            
             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button x:Name="BtnTodayweather" Content="오늘의 날씨" Width="100" Margin="5, 10"
+                <Button x:Name="BtnTodayweather" Content="주간 날씨" Width="100" Margin="5, 10"
                         Style="{StaticResource MahApps.Styles.Button.Square.Accent}" 
                         Click="BtnTodayweather_Click"/>
             </StackPanel>
@@ -41,6 +43,13 @@
                   IsReadOnly="True" ItemsSource="{Binding}"
                   Style="{StaticResource MahApps.Styles.DataGrid.Azure}"
                   MouseDoubleClick="GrdResult_MouseDoubleClick" />
+        
+        <!-- 하단 상태바 위치 -->
+        <StatusBar Grid.Row="2">
+            <StatusBarItem Content="날씨정보앱" />
+            <Separator Style="{StaticResource MahApps.Styles.Separator.StatusBar}" />
+            <StatusBarItem x:Name="StsResult" />
+        </StatusBar>
 
     </Grid>
 </mah:MetroWindow>

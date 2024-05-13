@@ -33,7 +33,7 @@ namespace ex02_Weather
 
         private async void BtnTodayweather_Click(object sender, RoutedEventArgs e)
         {
-            string openApiUri = "http://apis.data.go.kr/1360000/MidFcstInfoService";
+            string openApiUri = "https://apis.data.go.kr/1360000/MidFcstInfoService/getMidLandFcst?serviceKey=pcZPPoVs1hndQ8SFudvigsMLAkfSdP1omx9Acyi3QzzuXr%2FAksdF3cQZrVKIVc4CD%2FFUPyADPvHZQxUNnyVYGg%3D%3D&dataType=JSON&numOfRows=10&pageNo=1&regId=11H20000&tmFc=202405130600";
             string result = string.Empty;
 
             WebRequest req = null;
@@ -53,9 +53,12 @@ namespace ex02_Weather
             }
 
             var jsonResult = JObject.Parse(result);
-            var Status = Convert.ToInt32(jsonResult["status"]);
+            var numOfRows = Convert.ToInt32(jsonResult["numOfRows"]);
+
+            
 
 
         }
+
     }
 }
