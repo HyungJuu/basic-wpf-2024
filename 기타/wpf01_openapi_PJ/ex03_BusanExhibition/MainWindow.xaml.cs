@@ -150,7 +150,7 @@ namespace ex03_BusanExhibition
 
                         insRes += cmd.ExecuteNonQuery();
                     }
-                    
+
                     if (insRes > 0)
                     {
                         await this.ShowMessageAsync("저장", "DB저장성공!");
@@ -192,19 +192,13 @@ namespace ex03_BusanExhibition
 
         }
 
-        private void TxtYear_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        private void TxtYear_TextChanged(object sender, TextChangedEventArgs e)
         {
-            //var curItem = GrdResult.SelectedItem as Exhibition;
+            string SearchYear = TxtYear.Text.Trim('-');
+            if (!string.IsNullOrEmpty(SearchYear) && SearchYear.Length == 4)
+            {
 
-            //string Op_st_dt = curItem.op_st_dt;
-            //string Years = Op_st_dt.Substring(0, 4);
-            //if (TxtYear == Years)
-            //{
-
-            //}
-            
-
-
+            }
         }
     }
 }

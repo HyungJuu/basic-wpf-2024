@@ -54,7 +54,7 @@
                          mah:TextBoxHelper.Watermark="검색년도 입력"
                          mah:TextBoxHelper.UseFloatingWatermark="True"
                          mah:TextBoxHelper.ClearTextButton="True" 
-                         DataContextChanged="TxtYear_DataContextChanged"
+                         TextChanged="TxtYear_TextChanged"
                          />
 
             </StackPanel>
