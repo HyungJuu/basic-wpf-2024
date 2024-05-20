@@ -186,19 +186,33 @@ namespace ex03_BusanExhibition
             }
         }
 
-
         private void CboReqDate_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
 
-        private void TxtYear_TextChanged(object sender, TextChangedEventArgs e)
+        private void TxtYear_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            string SearchYear = TxtYear.Text.Trim('-');
-            if (!string.IsNullOrEmpty(SearchYear) && SearchYear.Length == 4)
-            {
+            //var curItem = GrdResult.SelectedItem as Exhibition;
 
-            }
+            //string Op_st_dt = curItem.op_st_dt;
+            //string SearchYear = Op_st_dt.Trim('-');
+            
+            //if (!string.IsNullOrEmpty(SearchYear) && SearchYear.Length == 4)
+            //{
+                
+            //    using(SqlConnection conn = new SqlConnection(Helpers.Common.CONNSTRING))
+            //    {
+            //        conn.Open();
+
+            //        foreach (Exhibition item in GrdResult.Items)
+            //        {
+            //            SqlCommand cmd = new SqlCommand(Models.Exhibition.SELECT_QUERY, conn);
+            //            cmd.Parameters.AddWithValue("@op_st_dt", item.op_st_dt);
+            //        }
+            //    }
+            //}
+
         }
     }
 }

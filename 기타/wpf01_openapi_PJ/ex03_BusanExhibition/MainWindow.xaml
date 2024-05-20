@@ -8,7 +8,7 @@
     xmlns:iconPack="http://metro.mahapps.com/winfx/xaml/iconpacks"
     xmlns:local="clr-namespace:ex03_BusanExhibition"
     mc:Ignorable="d"
-    Title="Busan Exhibition" Height="450" Width="800" MinHeight="300" MinWidth="600"
+    Title="Busan Exhibition" Height="500" Width="850" MinHeight="300" MinWidth="600" WindowStartupLocation="CenterScreen"
     Loaded="MetroWindow_Loaded">
     <!-- 아이콘 -->
     <mah:MetroWindow.IconTemplate>
@@ -54,7 +54,7 @@
                          mah:TextBoxHelper.Watermark="검색년도 입력"
                          mah:TextBoxHelper.UseFloatingWatermark="True"
                          mah:TextBoxHelper.ClearTextButton="True" 
-                         TextChanged="TxtYear_TextChanged"
+                         DataContextChanged="TxtYear_DataContextChanged"
                          />
 
             </StackPanel>
@@ -67,11 +67,11 @@
                   Style="{StaticResource MahApps.Styles.DataGrid.Azure}"
                   MouseDoubleClick="GrrdResult_MouseDoubleClick">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="전시번호" Binding="{Binding res_no}" />
-                <DataGridTextColumn Header="제목" Binding="{Binding title}" />
-                <DataGridTextColumn Header="전시시작일" Binding="{Binding op_st_dt}" />
-                <DataGridTextColumn Header="전시종료일" Binding="{Binding op_ed_dt}" />
-                <DataGridTextColumn Header="장소" Binding="{Binding place_nm}" />
+                <DataGridTextColumn Header="전시번호" Binding="{Binding res_no}" Width="78" />
+                <DataGridTextColumn Header="제목" Binding="{Binding title}" Width="418"/>
+                <DataGridTextColumn Header="전시시작일" Binding="{Binding op_st_dt}" Width="80" />
+                <DataGridTextColumn Header="전시종료일" Binding="{Binding op_ed_dt}" Width="80" />
+                <DataGridTextColumn Header="장소" Binding="{Binding place_nm}" Width="160"/>
             </DataGrid.Columns>
         </DataGrid>
         
